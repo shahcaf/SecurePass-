@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: SecurePass
+    runtime: node
+    buildCommand: npm install
+    startCommand: node init-db.js && node deploy-commands.js && node index.js
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: DATABASE_URL
+        sync: false
