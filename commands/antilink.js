@@ -38,6 +38,6 @@ module.exports = {
       .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
     await interaction.editReply({ embeds: [embed] });
-    await logger.log(guild, interaction.user, `ANTILINK_${enabled ? 'ENABLED' : 'DISABLED'}`, enabled ? '#00ff7f' : '#ff4500');
+    await db.addLog(`ANTILINK_${enabled ? 'ENABLED' : 'DISABLED'}`, interaction.user.id, guild.id);
   }
 };

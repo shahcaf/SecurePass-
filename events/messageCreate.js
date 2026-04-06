@@ -28,7 +28,7 @@ module.exports = {
         const warnMsg = await message.channel.send({ embeds: [warnEmbed] });
         setTimeout(() => warnMsg.delete().catch(() => {}), 5000);
 
-        await logger.log(message.guild, message.author, 'ANTI_LINK_TRIGGERED', '#ff4500');
+        await db.addLog('ANTI_LINK_TRIGGERED', message.author.id, message.guild.id);
       } catch (error) {
         console.error('Error in anti-link:', error);
       }

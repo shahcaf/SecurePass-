@@ -25,8 +25,9 @@ module.exports = {
     if (userStatus && userStatus.verified) {
       if (serverConfig.auto_verify && serverConfig.role_id) {
         try {
-          await member.roles.add(serverConfig.role_id);
-          await logger.log(guild, user, 'AUTO_VERIFIED', '#00ff00');
+          const role = await guild.roles.fetch(serverConfig.role_id).catch(() => null);
+          if (role) await member.roles.add(role);
+          await db.addLog('AUTO_VERIFIED', user.id, guild.id);
         } catch (error) {
           console.error(`Failed to assign role to ${user.tag} in ${guild.name}:`, error);
         }

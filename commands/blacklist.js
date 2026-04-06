@@ -19,7 +19,7 @@ module.exports = {
     const reason = interaction.options.getString('reason');
 
     await db.blacklistUser(user.id, reason);
-    await logger.log(interaction.guild, user, 'GLOBAL_BLACKLIST_ISSUED', '#ff0000');
+    await db.addLog('GLOBAL_BLACKLIST_ISSUED', user.id, interaction.guildId);
 
     const embed = new EmbedBuilder()
       .setTitle('🚨 Global Blacklist Issued')
