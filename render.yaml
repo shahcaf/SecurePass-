@@ -1,5 +1,5 @@
 services:
-  - type: worker
+  - type: web
     name: SecurePass
     runtime: node
     buildCommand: npm install

@@ -43,3 +43,13 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.DISCORD_TOKEN);
+
+// --- Keep-alive HTTP server for Render Web Service ---
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('SecurePass is online.');
+}).listen(PORT, () => {
+  console.log(`🌐 Health server running on port ${PORT}`);
+});
