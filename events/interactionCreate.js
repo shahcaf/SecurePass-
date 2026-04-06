@@ -134,27 +134,30 @@ module.exports = {
           helpEmbed.setTitle('👤 User Commands')
             .setDescription('These public commands are available for everyone.')
             .addFields(
-              { name: '🔍 /status', value: 'Check your own global verification status.', inline: true },
-              { name: '👥 /userinfo', value: 'View your detailed global security profile.', inline: true },
-              { name: '✨ /credits', value: 'View the designers and developers.', inline: true },
-              { name: '⚡ /ping', value: 'Test the current bot performance.', inline: true }
+              { name: '🔍 /status', value: 'Check your global verification status.', inline: true },
+              { name: '👥 /userinfo', value: 'View your detailed security profile.', inline: true },
+              { name: '📥 /invite', value: 'Get the bot invite link.', inline: true },
+              { name: '✨ /credits', value: 'View the contributors.', inline: true },
+              { name: '⚡ /ping', value: 'Check bot latency.', inline: true }
             );
         } else if (selection === 'cat_admin') {
           helpEmbed.setTitle('⚙️ Admin Commands')
-            .setDescription('These commands are restricted to server staff or developers.')
+            .setDescription('Restricted to server staff or developers.')
             .addFields(
-              { name: '🛠️ /setup', value: 'Configure verified role and log channel.', inline: true },
-              { name: '📜 /config', value: 'View current server configuration.', inline: true },
-              { name: '🔗 /antilink', value: 'Toggle the anti-link protection system.', inline: true },
-              { name: '📊 /serverlist', value: '**Developer Only.** View bot network.', inline: true },
-              { name: '📈 /info', value: 'View global bot statistics.', inline: true }
+              { name: '🛠️ /setup', value: 'Configure server settings.', inline: true },
+              { name: '📜 /config', value: 'View server setup details.', inline: true },
+              { name: '📂 /logs', value: 'View recent security logs.', inline: true },
+              { name: '🔗 /antilink', value: 'Toggle link protection.', inline: true },
+              { name: '📊 /serverlist', value: 'Developer bot list.', inline: true },
+              { name: '📈 /info', value: 'Bot stats.', inline: true }
             );
         } else if (selection === 'cat_security') {
           helpEmbed.setTitle('🛡️ Security & Protection')
-            .setDescription('Advanced tools for managing global blacklists and safety.')
+            .setDescription('Advanced global security and whitelist management.')
             .addFields(
-              { name: '🚨 /blacklist', value: 'Globally ban a user from SecurePass.', inline: true },
-              { name: '🛡️ /unblacklist', value: 'Remove a global ban from a user.', inline: true }
+              { name: '🚨 /blacklist', value: 'Apply a global ban.', inline: true },
+              { name: '🛡️ /unblacklist', value: 'Remove a global ban.', inline: true },
+              { name: '💎 /whitelist', value: 'Manage whitelisted links.', inline: true }
             );
         }
 

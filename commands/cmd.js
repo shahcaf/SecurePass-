@@ -8,11 +8,11 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setTitle('🛡️ SecurePass Help Center')
-      .setDescription('Please select a category from the dropdown menu below to view available commands and their descriptions.')
+      .setDescription('Please select a category from the dropdown menu below to view available commands and descriptions. SecurePass provides global verification and server-side link protection.')
       .addFields(
-        { name: '👤 User Commands', value: '`/status`, `/userinfo`, `/credits`, `/ping` (Self/Public)', inline: true },
-        { name: '⚙️ Admin Commands', value: '`/setup`, `/config`, `/logs`, `/info`, `/antilink` (Staff)', inline: true },
-        { name: '🛡️ Security Commands', value: '`/blacklist`, `/unblacklist`, `/userinfo` (Others/Staff)', inline: true }
+        { name: '👤 User', value: '`/status`, `/userinfo`, `/invite`, `/credits`, `/ping`', inline: true },
+        { name: '⚙️ Admin', value: '`/setup`, `/config`, `/logs`, `/info`, `/antilink`', inline: true },
+        { name: '🚨 Security', value: '`/blacklist`, `/unblacklist`, `/whitelist`', inline: true }
       )
       .setColor('#3498db')
       .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
