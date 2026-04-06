@@ -17,6 +17,12 @@ module.exports = {
       .setThumbnail(interaction.client.user.displayAvatarURL())
       .setFooter({ text: 'SecurePass • Professional Security for Discord' });
 
+    // Ensure we handle both DISCORD_TOKEN and BOT_TOKEN env vars
+    const token = process.env.DISCORD_TOKEN || process.env.BOT_TOKEN;
+    if (!token) {
+        throw new Error('Neither DISCORD_TOKEN nor BOT_TOKEN were provided in environment variables.');
+    }
+
     const row = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()

@@ -16,17 +16,24 @@ const client = new Client({
 
 client.commands = new Collection();
 
-// Load Commands
+// Recursive Command Loader
 const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-  const filePath = path.join(commandsPath, file);
-  const command = require(filePath);
-  if ('data' in command && 'execute' in command) {
-    client.commands.set(command.data.name, command);
+const loadCommandsRecursive = (dir) => {
+  const files = fs.readdirSync(dir);
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat.isDirectory()) {
+      loadCommandsRecursive(filePath);
+    } else if (file.endsWith('.js')) {
+      const command = require(filePath);
+      if ('data' in command && 'execute' in command) {
+        client.commands.set(command.data.name, command);
+      }
+    }
   }
-}
+};
+loadCommandsRecursive(commandsPath);
 
 // Load Events
 const eventsPath = path.join(__dirname, 'events');
@@ -42,7 +49,7 @@ for (const file of eventFiles) {
   }
 }
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.DISCORD_TOKEN || process.env.BOT_TOKEN);
 
 // --- Keep-alive HTTP server for Render Web Service ---
 const http = require('http');
