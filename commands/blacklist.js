@@ -29,7 +29,7 @@ module.exports = {
         { name: '🛡️ Reason', value: reason, inline: true }
       )
       .setColor('#ff0000')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
 
     await interaction.editReply({ embeds: [embed] });
   }

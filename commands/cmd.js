@@ -15,7 +15,7 @@ module.exports = {
         { name: '🚨 Security', value: '`/blacklist`, `/unblacklist`, `/whitelist`', inline: true }
       )
       .setColor('#3498db')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
 
     const menu = new StringSelectMenuBuilder()
       .setCustomId('cmd_category_select')

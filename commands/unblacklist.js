@@ -26,7 +26,7 @@ module.exports = {
       .setTitle('🛡️ Global Blacklist Removed')
       .setDescription(`User **${user.tag}** has been restored to good standing.`)
       .setColor('#00ff7f')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
     await interaction.editReply({ embeds: [embed] });
   }

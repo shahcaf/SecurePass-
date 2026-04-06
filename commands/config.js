@@ -26,7 +26,7 @@ module.exports = {
         { name: '🔗 Anti-Link', value: config.anti_link ? '✅ Enabled' : '❌ Disabled', inline: true }
       )
       .setColor('#00bfff')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
 
     await interaction.editReply({ embeds: [embed] });
   }

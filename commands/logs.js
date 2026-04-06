@@ -15,7 +15,7 @@ module.exports = {
       .setTitle('📋 Recent Security Logs')
       .setDescription(`Viewing the last 10 events for **${interaction.guild.name}**.`)
       .setColor('#00bfff')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
 
     if (logs.length === 0) {
       embed.setDescription('No logs found for this server.');

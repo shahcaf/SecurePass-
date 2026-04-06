@@ -42,7 +42,7 @@ module.exports = {
           { name: 'Anti-Link', value: antiLink ? '✅ Enabled' : '❌ Disabled', inline: true }
         )
         .setColor('#3498db')
-        .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
+        .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.guild.iconURL() });
 
       await interaction.editReply({ embeds: [embed] });
 
@@ -51,7 +51,7 @@ module.exports = {
         .setTitle('🛡️ SecurePass Verification')
         .setDescription(`To gain access to **${interaction.guild.name}**, you must complete our global identity verification. Once verified, you will be trusted across all servers using SecurePass!`)
         .setColor('#00ff7f')
-        .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+        .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
       const panelRow = new ActionRowBuilder().addComponents(
         new ButtonBuilder()

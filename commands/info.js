@@ -21,7 +21,7 @@ module.exports = {
         { name: '⚡ Bot Latency', value: `\`${Math.round(interaction.client.ws.ping)}ms\``, inline: true }
       )
       .setColor('#00bfff')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
 
     await interaction.reply({ embeds: [embed] });
   }

@@ -17,7 +17,7 @@ module.exports = {
       .setTitle('🌐 SecurePass Network Explorer')
       .setDescription(`Currently securing **${guilds.size}** servers across Discord.`)
       .setColor('#3498db')
-      .setFooter({ text: 'Developer Portal • maded by <@1414542711683289152>' });
+      .setFooter({ text: 'Developer Portal • made by <@1414542711683289152>' });
 
     const serverList = [];
     for (const guild of guilds.values()) {

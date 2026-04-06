@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { REST, Routes } = require('discord.js');
+const { initDatabase } = require('./database/db'); // Utility Database
 const fs = require('fs');
 const path = require('path');
 
@@ -26,6 +27,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN || p
 
 (async () => {
   try {
+    initDatabase();
     console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
     const data = await rest.put(

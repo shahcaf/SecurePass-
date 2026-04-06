@@ -25,7 +25,7 @@ module.exports = {
         { name: '🛡️ Global Standings', value: blacklist ? '🚨 BLACKLISTED' : '✅ Good Standing', inline: true },
       )
       .setColor(userStatus?.verified && !blacklist ? '#00ff00' : '#ff0000')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
     if (blacklist) {
       embed.addFields({ name: '⚠️ Blacklist Reason', value: blacklist.reason || 'No reason provided.' });

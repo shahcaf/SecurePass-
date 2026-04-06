@@ -35,7 +35,7 @@ module.exports = {
       .setDescription(`The anti-link system has been **${enabled ? 'Enabled' : 'Disabled'}**.`)
       .setColor(enabled ? '#00ff7f' : '#ff4500')
       .addFields({ name: 'Status', value: enabled ? '✅ Active (Blocking Links)' : '❌ Inactive' })
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
     await interaction.editReply({ embeds: [embed] });
     await logger.log(guild, interaction.user, `ANTILINK_${enabled ? 'ENABLED' : 'DISABLED'}`, enabled ? '#00ff7f' : '#ff4500');

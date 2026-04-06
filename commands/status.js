@@ -20,7 +20,7 @@ module.exports = {
         { name: 'Global Standing', value: blacklisted ? '🚨 Blacklisted' : '✅ Good Standing', inline: true },
       )
       .setColor(userStatus && userStatus.verified && !blacklisted ? '#00ff00' : '#ff0000')
-      .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
+      .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: interaction.client.user.displayAvatarURL() });
 
     if (userStatus?.created_at) {
       embed.addFields({ name: '📅 Date Verified', value: userStatus.created_at.toLocaleString(), inline: true });

@@ -53,7 +53,7 @@ module.exports = {
           .setDescription('To complete your global verification, please solve the image captcha below. Click the button to enter the code.')
           .setImage('attachment://captcha.png')
           .setColor('#00ff7f')
-          .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+          .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
         const row = new ActionRowBuilder().addComponents(
           new ButtonBuilder()
@@ -112,10 +112,10 @@ module.exports = {
             .setTitle('✅ Verification Successful!')
             .setDescription('Your SecurePass identity has been verified and updated in our global network.')
             .setColor('#00ff00')
-            .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>' });
+            .setFooter({ text: 'SecurePass • made by <@1414542711683289152>' });
 
           await interaction.reply({ embeds: [successEmbed], ephemeral: true });
-          await logger.log(interaction.guild, user, 'VERIFIED_SUCCESS_CAPTCHA', '#00ff00');
+          await db.addLog('VERIFIED_SUCCESS_CAPTCHA', user.id, guildId);
         } else {
           await interaction.reply({ content: '❌ Invalid captcha code. Please try again with `/verify`.', ephemeral: true });
         }
@@ -128,7 +128,7 @@ module.exports = {
         const selection = interaction.values[0];
         const helpEmbed = new EmbedBuilder()
           .setColor('#00ff7f')
-          .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: client.user.displayAvatarURL() });
+          .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: client.user.displayAvatarURL() });
 
         if (selection === 'cat_user') {
           helpEmbed.setTitle('👤 User Commands')

@@ -12,7 +12,7 @@ module.exports = {
       .setTitle('⚡ SecurePass Performance')
       .setDescription(`Current WebSocket latency: **${lat}ms**`)
       .setColor(lat < 100 ? '#00ff00' : (lat < 250 ? '#ffff00' : '#ff0000'))
-      .setFooter({ text: 'Performance Monitoring • maded by <@1414542711683289152>' });
+      .setFooter({ text: 'Performance Monitoring • made by <@1414542711683289152>' });
 
     await interaction.editReply({ embeds: [embed] });
   }

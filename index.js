@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Collection, EmbedBuilder, ActionRowBuilder, B
 const fs = require('fs');
 const path = require('path');
 const db = require('./utils/db');
+const { initDatabase } = require('./database/db'); // Utility Database
 require('colors');
 
 const client = new Client({
@@ -15,6 +16,7 @@ const client = new Client({
 });
 
 client.commands = new Collection();
+client.cooldowns = new Collection(); // For Utility Commands
 
 // Recursive Command Loader
 const commandsPath = path.join(__dirname, 'commands');
@@ -49,7 +51,18 @@ for (const file of eventFiles) {
   }
 }
 
-client.login(process.env.DISCORD_TOKEN || process.env.BOT_TOKEN);
+(async () => {
+  try {
+    // Initialize both databases
+    initDatabase(); // (SQLite WASM)
+    console.log('✅ Utility Database initialized.');
+    
+    // Login
+    client.login(process.env.DISCORD_TOKEN || process.env.BOT_TOKEN);
+  } catch (error) {
+    console.error('❌ Failed to start the bot:', error);
+  }
+})();
 
 // --- Keep-alive HTTP server for Render Web Service ---
 const http = require('http');

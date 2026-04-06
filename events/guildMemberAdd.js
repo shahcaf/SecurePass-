@@ -39,7 +39,7 @@ module.exports = {
           .setTitle('🛡️ SecurePass Verification')
           .setDescription(`Welcome to **${guild.name}**, ${user}! To access this server, you must verify your identity through our global security platform.`)
           .setColor('#00bfff')
-          .setFooter({ text: 'SecurePass • maded by <@1414542711683289152>', iconURL: guild.iconURL() })
+          .setFooter({ text: 'SecurePass • made by <@1414542711683289152>', iconURL: guild.iconURL() })
           .setTimestamp();
 
         const row = new ActionRowBuilder()

@@ -30,7 +30,7 @@ module.exports = {
         .setTitle('✅ User Whitelisted')
         .setDescription(`${target} can now post links in this server.`)
         .setColor('#00ff7f')
-        .setFooter({ text: 'SecurePass Anti-Link • maded by <@1414542711683289152>' });
+        .setFooter({ text: 'SecurePass Anti-Link • made by <@1414542711683289152>' });
 
       await interaction.editReply({ embeds: [embed] });
 
@@ -42,7 +42,7 @@ module.exports = {
         .setTitle('🚫 User Removed from Whitelist')
         .setDescription(`${target} can no longer post links in this server.`)
         .setColor('#ff4500')
-        .setFooter({ text: 'SecurePass Anti-Link • maded by <@1414542711683289152>' });
+        .setFooter({ text: 'SecurePass Anti-Link • made by <@1414542711683289152>' });
 
       await interaction.editReply({ embeds: [embed] });
 
